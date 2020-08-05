@@ -1,0 +1,19 @@
+import java.io.*;
+
+class Odd{
+	public static void main(String args[]){
+		
+		int num1=args[0];
+		int num2=args[1];
+		assert num1>0 && num2>0:"Numbers cannot be negative";
+		assert num2>num1:"1st number should be smaller than 2nd";
+		Bufferedreader br=new BufferedReader(new InputStreamReader(System.in));
+		for(i=num1;i<=num2;i++)
+		{
+			int r=i%2;
+			if(r==1)
+			System.out.println(r);
+		}
+	}
+}
+

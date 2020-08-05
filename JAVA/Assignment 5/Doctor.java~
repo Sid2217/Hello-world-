@@ -1,0 +1,77 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+class UException extends Exception{
+
+	public void ageException(){
+		
+		System.out.println("Age not witin range :");	
+	}
+	public void ivName(){
+	
+		System.out.println("Invalid exception");
+	}
+
+
+}
+
+
+public class Doctor{
+
+	int age;
+	String name;
+	String dept;
+	int id;
+	
+	public Doctor(int age,String name,String dept,int id){
+	
+		this.id=id;
+		this.name=name;
+		this.dept=dept;
+		this.age=age;
+	}
+	public void getData(){
+		
+		try{
+		if((this.age>65) || (this.age<25))
+			throw new UException();
+		else
+			System.out.println("Age is "+this.age);
+			
+		}	
+		catch(UException e){
+			e.ageException();
+		
+		}
+		
+								
+		try{
+        	    if( ((name != null) 
+                && (!name.equals("")) 
+                && (name.matches("^[a-zA-Z]*$"))))
+                {
+                		System.out.println("Name is "+this.name);
+                }
+                else{
+                	throw new UException();
+                } 
+     }
+     catch(UException e){
+     
+     	e.ivName();
+     }
+		
+	}
+	public static void main(String args[]){
+	
+		Doctor d= new Doctor(23,"siddhesh","ortho",101);
+		
+		d.getData();
+	
+	
+	}
+
+
+
+
+
+}

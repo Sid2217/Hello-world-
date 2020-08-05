@@ -1,0 +1,4 @@
+javap -c java.lang.string
+javap -c java.lang.object
+javap -c java.lang.math
+
